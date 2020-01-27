@@ -10,11 +10,8 @@ pipeline {
 
         stage('Kubectl deploy') {
             steps {
-                timeout(time: 3, unit: 'MINUTES') {
-                    retry(1) {
-                        sh './kubectl_deploy.sh'
-                    }
-                }
+                echo "In deploy"
+                sh 'kubectl get nodes'
             }
         }
     }

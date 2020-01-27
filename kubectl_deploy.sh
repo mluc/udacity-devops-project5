@@ -3,6 +3,4 @@ pwd
 ls -la
 sudo cat .kube/config
 sudo cat .aws/credentials
-kubectl config use-context project5@prod.us-east-1.eksctl.io
-kubectl config current-context
-kubectl get nodes
+kubectl --server=https://44CC0B79BD7412E0EE61DB0DF0A03258.gr7.us-east-1.eks.amazonaws.com get nodes

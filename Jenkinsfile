@@ -11,7 +11,7 @@ pipeline {
         stage('Run docker') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
+                    retry(1) {
                         sh './run_docker.sh'
                     }
                 }
@@ -22,7 +22,7 @@ pipeline {
         stage('Upload docker') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
+                    retry(1) {
                         sh './upload_docker.sh'
                     }
                 }
@@ -32,7 +32,7 @@ pipeline {
         stage('Kubectl deploy') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
+                    retry(1) {
                         sh './kubectl_deploy.sh'
                     }
                 }

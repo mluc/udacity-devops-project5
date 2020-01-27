@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Kubectl deploy') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                     retry(5) {

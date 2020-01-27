@@ -10,8 +10,7 @@ pipeline {
 
         stage('Kubectl deploy') {
             steps {
-                echo "In deploy"
-                sh 'kubectl get nodes'
+                sh './kubectl_deploy.sh'
             }
         }
     }

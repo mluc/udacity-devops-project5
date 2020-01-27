@@ -1,3 +1,4 @@
+cd /var/lib/jenkins/
 pwd
 ls -la
 

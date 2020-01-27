@@ -9,6 +9,6 @@ echo $HOME
 #sudo echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 #sudo echo $PATH
 #aws-iam-authenticator help
-#sudo kubectl config get-contexts
-#ls -la
-#sudo kubectl get nodes
+sudo kubectl config get-contexts
+ls -la
+sudo kubectl get nodes

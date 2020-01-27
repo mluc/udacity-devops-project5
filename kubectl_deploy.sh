@@ -1,6 +1,5 @@
 cd /var/lib/jenkins
 
-sudo cat .kube/config
 #echo $PATH
 #export PATH=$PATH:/var/lib/jenkins
 #
@@ -10,6 +9,6 @@ sudo cat .kube/config
 #sudo echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 #sudo echo $PATH
 #aws-iam-authenticator help
-#sudo kubectl config get-contexts
-#ls -la
-#sudo kubectl get nodes
+sudo kubectl config get-contexts
+ls -la
+sudo kubectl get nodes

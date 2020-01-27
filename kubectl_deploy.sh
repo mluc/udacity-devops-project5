@@ -1,2 +1,2 @@
-kubectl config get-contexts
-kubectl get nodes
+sudo kubectl config get-contexts
+sudo kubectl get nodes

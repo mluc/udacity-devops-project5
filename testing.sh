@@ -1,5 +1,5 @@
 echo "To deploy"
 pwd
 kubectl version --client
-docker images
+sudo docker images
 echo "Done"

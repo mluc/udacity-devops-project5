@@ -33,7 +33,7 @@ pipeline {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                     retry(5) {
-                        sh './testing.sh'
+                        sh './kubectl_deploy.sh'
                     }
                 }
             }

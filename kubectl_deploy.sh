@@ -2,5 +2,6 @@ cd /var/lib/jenkins/
 pwd
 ls -la
 
-kubectl config get-contexts
-kubectl get nodes
+aws sts get-caller-identity
+aws --version
+kubectl get svc

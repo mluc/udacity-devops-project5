@@ -50,7 +50,14 @@ pipeline {
                                 contextName: 'project5@prod.us-east-1.eksctl.io',
                                 clusterName: 'prod.us-east-1.eksctl.io'
                                 ]) {
-                  sh 'kubectl get pods'
+                  echo 'ReplicaSet objects:'
+                  sh 'kubectl get replicasets'
+                  sh 'kubectl describe replicasets'
+                  echo 'Service:'
+                  sh 'kubectl get services my-service'
+                  sh 'kubectl describe services my-service'
+                  echo 'Pods:'
+                  sh 'kubectl get pods --output=wide'
                 }
             }
           }

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project5-deployment
+  name: hello-world-project5
   labels:
     app: hello-world-project5
 spec:

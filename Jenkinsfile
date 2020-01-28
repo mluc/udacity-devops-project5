@@ -21,21 +21,21 @@ pipeline {
             }
         }
 
-//         stage('Apply Kubernetes deployment file') {
-//             steps {
-//               withKubeConfig([credentialsId: 'jenkins-deployer-credentials', serverUrl: 'https://A29B762498A21F68BAACAD1FA6B186A5.sk1.us-east-1.eks.amazonaws.com']) {
-//               sh 'kubectl apply -f project5-deployment.yaml'
-//               }
-//             }
-//           }
-//
-//         stage('Apply Kubernetes service file') {
-//             steps {
-//               withKubeConfig([credentialsId: 'jenkins-deployer-credentials', serverUrl: 'https://A29B762498A21F68BAACAD1FA6B186A5.sk1.us-east-1.eks.amazonaws.com']) {
-//               sh 'kubectl apply -f project5-service.yaml'
-//               }
-//             }
-//           }
+        stage('Apply Kubernetes deployment file') {
+            steps {
+              withKubeConfig([credentialsId: 'jenkins-deployer-credentials', serverUrl: 'https://A29B762498A21F68BAACAD1FA6B186A5.sk1.us-east-1.eks.amazonaws.com']) {
+              sh 'kubectl apply -f project5-deployment.yaml'
+              }
+            }
+          }
+
+        stage('Apply Kubernetes service file') {
+            steps {
+              withKubeConfig([credentialsId: 'jenkins-deployer-credentials', serverUrl: 'https://A29B762498A21F68BAACAD1FA6B186A5.sk1.us-east-1.eks.amazonaws.com']) {
+              sh 'kubectl apply -f project5-service.yaml'
+              }
+            }
+          }
 
        stage ("wait for 10 seconds") {
             steps {
@@ -43,20 +43,17 @@ pipeline {
             }
         }
 
-        stage('List pods') {
+        stage('Results') {
             steps {
                 withKubeConfig([credentialsId: 'jenkins-deployer-credentials',
                                 serverUrl: 'https://A29B762498A21F68BAACAD1FA6B186A5.sk1.us-east-1.eks.amazonaws.com',
                                 contextName: 'project5@prod.us-east-1.eksctl.io',
                                 clusterName: 'prod.us-east-1.eksctl.io'
                                 ]) {
-                  echo 'ReplicaSet objects:'
                   sh 'kubectl get replicasets'
                   sh 'kubectl describe replicasets'
-                  echo 'Service:'
                   sh 'kubectl get services my-service'
                   sh 'kubectl describe services my-service'
-                  echo 'Pods:'
                   sh 'kubectl get pods --output=wide'
                 }
             }

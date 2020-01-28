@@ -50,6 +50,7 @@ pipeline {
                                 contextName: 'project5@prod.us-east-1.eksctl.io',
                                 clusterName: 'prod.us-east-1.eksctl.io'
                                 ]) {
+                  sh 'kubectl get deployments'
                   sh 'kubectl get replicasets'
                   sh 'kubectl describe replicasets'
                   sh 'kubectl get services my-service'
